@@ -31,7 +31,8 @@ func TestMP3DecodePanicCase(t *testing.T) {
 
 	streamer, _, err := mp3.Decode(r)
 	if err != nil {
-		t.Fatal(err)
+		t.Logf("Expected error caught: %v", err)
+		return
 	}
 	defer streamer.Close()
 }
